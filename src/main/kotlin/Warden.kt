@@ -8,6 +8,6 @@ class Warden {
     }
 
     fun pullRightLever() {
-        rightLeverPulled = true
+        rightLeverPulled = !rightLeverPulled
     }
 }

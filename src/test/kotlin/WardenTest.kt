@@ -12,10 +12,12 @@ class WardenTest {
     }
 
     @Test
-    fun pullRightLever(){
+    fun pullRightLeverToggles(){
         val warden = Warden()
         warden.pullRightLever()
         assertTrue(warden.rightLeverPulled)
+        warden.pullRightLever()
+        assertFalse(warden.rightLeverPulled)
     }
 
 }
