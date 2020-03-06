@@ -21,4 +21,13 @@ class PrisonerTest {
         assertTrue(warden.rightLeverPulled)
     }
 
+    @Test
+    fun pullTheLeftLeverIfRightAlreadyPulled(){
+        val prisoner = Prisoner()
+        val warden = Warden()
+        warden.rightLeverPulled = true
+        warden.summon(prisoner)
+        assertTrue(warden.leftLeverPulled)
+    }
+
 }
