@@ -6,7 +6,7 @@ class GuesserTest {
 
     @Test
     fun pullTheLeftLeverIfRightIsNotPulled(){
-        val guesser = Guesser()
+        val guesser = Guesser(10)
         val warden = Warden()
         warden.summon(guesser)
         assertTrue(warden.leftLeverPulled)
@@ -14,7 +14,7 @@ class GuesserTest {
 
     @Test
     fun resetRightLeverWhenPulled(){
-        val guesser = Guesser()
+        val guesser = Guesser(10)
         val warden = Warden()
         warden.rightLeverPulled = true
         warden.summon(guesser)

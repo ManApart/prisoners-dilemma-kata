@@ -1,4 +1,4 @@
-import junit.framework.Assert.assertEquals
+import junit.framework.TestCase.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -16,6 +16,12 @@ class JailTest {
         val jail = Jail(5)
 
         assertTrue(jail.prisoners.contains(jail.guesser))
+    }
+
+    @Test
+    fun guesserKnowsPrisonerCount(){
+        val jail = Jail(10)
+        assertEquals(10, jail.guesser.prisonerCount)
     }
 
 
