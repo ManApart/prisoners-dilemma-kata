@@ -31,14 +31,21 @@ class WardenTest {
 
     @Test
     fun guessCorrectly(){
-        val warden = Warden()
         val jail = Jail(10)
         jail.prisoners.forEach {
             jail.warden.summon(it)
         }
-        warden.guess()
+        jail.warden.guess()
 
-        assertTrue(warden.hasBeenGivenCorrectGuess)
+        assertTrue(jail.warden.hasBeenGivenCorrectGuess)
+    }
+    
+    @Test
+    fun guessIncorrectly(){
+        val jail = Jail(10)
+        jail.warden.guess()
+
+        assertFalse(jail.warden.hasBeenGivenCorrectGuess)
     }
 
 }

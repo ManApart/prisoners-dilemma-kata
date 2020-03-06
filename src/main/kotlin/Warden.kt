@@ -2,7 +2,7 @@ class Warden(val prisoners: List<Prisoner> = listOf()) {
 
     var rightLeverPulled = false
     var leftLeverPulled = false
-    val hasBeenGivenCorrectGuess = true
+    var hasBeenGivenCorrectGuess = false
 
     fun summon(prisoner: Prisoner) {
         prisoner.visit(this)
@@ -17,6 +17,8 @@ class Warden(val prisoners: List<Prisoner> = listOf()) {
     }
 
     fun guess() {
-
+        if (prisoners.all { it.hasVisitedWarden }) {
+            hasBeenGivenCorrectGuess = true
+        }
     }
 }
