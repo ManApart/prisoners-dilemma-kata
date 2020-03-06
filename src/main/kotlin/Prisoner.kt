@@ -1,3 +1,3 @@
 class Prisoner {
-    val hasVisitedWarden = false
+    var hasVisitedWarden = false
 }
