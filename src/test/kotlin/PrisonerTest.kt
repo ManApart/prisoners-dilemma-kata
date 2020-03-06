@@ -13,4 +13,12 @@ class PrisonerTest {
         assertTrue(prisoner.hasVisitedWarden)
     }
 
+    @Test
+    fun pullTheRightLeverIfNew(){
+        val prisoner = Prisoner()
+        val warden = Warden()
+        warden.summon(prisoner)
+        assertTrue(warden.rightLeverPulled)
+    }
+
 }
