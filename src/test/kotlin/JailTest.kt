@@ -24,5 +24,11 @@ class JailTest {
         assertEquals(10, jail.guesser.prisonerCount)
     }
 
+    @Test
+    fun wardenHasListOfPrisoners(){
+        val jail = Jail(10)
+        assertEquals(10, jail.warden.prisoners.size)
+    }
+
 
 }

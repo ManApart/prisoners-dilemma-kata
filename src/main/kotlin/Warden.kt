@@ -1,4 +1,4 @@
-class Warden {
+class Warden(val prisoners: List<Prisoner> = listOf()) {
 
     var rightLeverPulled = false
     var leftLeverPulled = false
