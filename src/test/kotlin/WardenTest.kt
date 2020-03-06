@@ -29,4 +29,16 @@ class WardenTest {
         assertFalse(warden.leftLeverPulled)
     }
 
+    @Test
+    fun guessCorrectly(){
+        val warden = Warden()
+        val jail = Jail(10)
+        jail.prisoners.forEach {
+            jail.warden.summon(it)
+        }
+        warden.guess()
+
+        assertTrue(warden.hasBeenGivenCorrectGuess)
+    }
+
 }
