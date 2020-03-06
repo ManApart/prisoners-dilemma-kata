@@ -5,14 +5,14 @@ import org.junit.Test
 class WardenTest {
 
     @Test
-    fun wardenStartsWithTwoDownLevers(){
+    fun wardenStartsWithTwoDownLevers() {
         val warden = Warden()
         assertFalse(warden.rightLeverPulled)
         assertFalse(warden.leftLeverPulled)
     }
 
     @Test
-    fun pullRightLeverToggles(){
+    fun pullRightLeverToggles() {
         val warden = Warden()
         warden.pullRightLever()
         assertTrue(warden.rightLeverPulled)
@@ -21,7 +21,7 @@ class WardenTest {
     }
 
     @Test
-    fun pullLeftLeverToggles(){
+    fun pullLeftLeverToggles() {
         val warden = Warden()
         warden.pullLeftLever()
         assertTrue(warden.leftLeverPulled)
@@ -30,7 +30,7 @@ class WardenTest {
     }
 
     @Test
-    fun guessCorrectly(){
+    fun guessCorrectly() {
         val jail = Jail(10)
         jail.prisoners.forEach {
             jail.warden.summon(it)
@@ -39,12 +39,26 @@ class WardenTest {
 
         assertTrue(jail.warden.hasBeenGivenCorrectGuess)
     }
-    
+
     @Test
-    fun guessIncorrectly(){
+    fun guessIncorrectly() {
         val jail = Jail(10)
         jail.warden.guess()
 
+        assertFalse(jail.warden.hasBeenGivenCorrectGuess)
+    }
+
+    @Test
+    fun cannotReGuess() {
+        val jail = Jail(10)
+        jail.warden.guess()
+
+        assertFalse(jail.warden.hasBeenGivenCorrectGuess)
+
+        jail.prisoners.forEach {
+            jail.warden.summon(it)
+        }
+        jail.warden.guess()
         assertFalse(jail.warden.hasBeenGivenCorrectGuess)
     }
 
