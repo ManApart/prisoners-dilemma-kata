@@ -11,5 +11,12 @@ class JailTest {
         assertTrue(jail.prisoners.none {it.hasVisitedWarden})
     }
 
-    
+    @Test
+    fun guesserIsAPrisoner(){
+        val jail = Jail(5)
+
+        assertTrue(jail.prisoners.contains(jail.guesser))
+    }
+
+
 }

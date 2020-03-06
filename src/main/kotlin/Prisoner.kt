@@ -1,8 +1,8 @@
-class Prisoner {
+open class Prisoner {
     var hasVisitedWarden = false
     private var hasPulledRightLeverBefore = false
 
-    fun visit(warden: Warden) {
+    open fun visit(warden: Warden) {
         if (!warden.rightLeverPulled && !hasPulledRightLeverBefore) {
             warden.pullRightLever()
             hasPulledRightLeverBefore = true

@@ -1,3 +1,4 @@
 class Jail(prisonerCount: Int) {
-    val prisoners = (0 until prisonerCount).map { Prisoner() }
+    val guesser = Guesser()
+    val prisoners = listOf(guesser) + (0 until prisonerCount -1).map { Prisoner() }
 }
