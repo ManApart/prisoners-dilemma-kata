@@ -10,4 +10,6 @@ class JailTest {
         assertEquals(5, jail.prisoners.size)
         assertTrue(jail.prisoners.none {it.hasVisitedWarden})
     }
+
+    
 }
