@@ -1,5 +1,9 @@
 class Guesser : Prisoner() {
     override fun visit(warden: Warden) {
-        warden.pullLeftLever()
+        if (warden.rightLeverPulled) {
+            warden.pullRightLever()
+        } else {
+            warden.pullLeftLever()
+        }
     }
 }

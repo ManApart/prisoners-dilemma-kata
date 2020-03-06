@@ -1,4 +1,5 @@
-import org.junit.Assert
+import junit.framework.TestCase.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class GuesserTest {
@@ -8,7 +9,16 @@ class GuesserTest {
         val guesser = Guesser()
         val warden = Warden()
         warden.summon(guesser)
-        Assert.assertTrue(warden.leftLeverPulled)
+        assertTrue(warden.leftLeverPulled)
+    }
+
+    @Test
+    fun resetRightLeverWhenPulled(){
+        val guesser = Guesser()
+        val warden = Warden()
+        warden.rightLeverPulled = true
+        warden.summon(guesser)
+        assertFalse(warden.rightLeverPulled)
     }
 
 }
