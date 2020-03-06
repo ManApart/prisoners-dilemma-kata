@@ -6,5 +6,6 @@ class Guesser(val prisonerCount: Int) : Prisoner() {
         } else {
             warden.pullLeftLever()
         }
+        hasVisitedWarden = true
     }
 }
