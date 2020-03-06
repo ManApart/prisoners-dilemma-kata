@@ -1,4 +1,5 @@
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class WardenTest {
@@ -9,4 +10,12 @@ class WardenTest {
         assertFalse(warden.rightLeverPulled)
         assertFalse(warden.leftLeverPulled)
     }
+
+    @Test
+    fun pullRightLever(){
+        val warden = Warden()
+        warden.pullRightLever()
+        assertTrue(warden.rightLeverPulled)
+    }
+
 }
