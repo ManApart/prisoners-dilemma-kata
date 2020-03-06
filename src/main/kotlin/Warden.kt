@@ -4,6 +4,6 @@ class Warden {
     val leftLeverPulled = false
 
     fun summon(prisoner: Prisoner) {
-        prisoner.hasVisitedWarden = true
+        prisoner.visit(this)
     }
 }
